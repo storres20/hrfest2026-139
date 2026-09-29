@@ -1,0 +1,73 @@
+
+MULTI-NODE COLD-CHAIN DATA-CONTINUITY ANALYSIS
+==============================================
+
+Primary analysis start:
+2026-08-21 19:07:00+00:00
+
+Common analysis end:
+2026-09-07 15:35:00+00:00
+
+Expected nominal one-minute slots per node:
+24269
+
+Analysis rationale
+------------------
+Records generated before 2026-08-21 19:07:00+00:00 correspond to the initial
+installation and configuration phase. During this phase, the final
+nominal one-minute database persistence regime had not yet been
+established.
+
+These initial records were retained in the raw dataset for
+transparency but excluded from the primary continuity analysis.
+
+Persistence availability
+------------------------
+Persistence availability is calculated as:
+
+stored nominal one-minute slots / expected nominal one-minute slots
+
+A minute is counted as available when at least one persistent record
+exists for that node and nominal time slot.
+
+Temperature-data availability
+-----------------------------
+Temperature-data availability is calculated as:
+
+nominal slots containing a numeric temperature value /
+expected nominal one-minute slots
+
+Therefore, a persisted record with an empty or non-numeric temperature
+value contributes to persistence availability but not to
+temperature-data availability.
+
+Gap event
+---------
+A gap event is defined as one or more consecutive nominal one-minute
+slots without a persistent record.
+
+Inter-record intervals
+----------------------
+Inter-record intervals are calculated independently using createdAt.
+These intervals describe actual persistence timing and should not be
+confused with the number of missing nominal time slots.
+
+Simultaneous availability
+-------------------------
+Simultaneous three-node persistence availability represents the
+fraction of expected nominal time slots in which all three monitoring
+nodes contain a persistent record.
+
+Fault attribution limitation
+----------------------------
+The persistent database records permit end-to-end continuity
+assessment but do not permit causal attribution of a missing record
+to a specific subsystem such as the sensing node, Wi-Fi connection,
+WebSocket communication, backend processing, or MongoDB persistence.
+
+Scale limitation
+----------------
+The extended observation period strengthens the temporal evaluation,
+but the experiment still contains three physical monitoring nodes.
+The results therefore characterize this deployment and should not be
+interpreted as evidence of large-scale scalability.

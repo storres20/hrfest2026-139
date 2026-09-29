@@ -1,0 +1,2 @@
+analysis_start_utc,analysis_end_utc,expected_one_minute_slots_per_node,elapsed_hours,elapsed_days,simultaneous_persistence_slots,simultaneous_persistence_availability_pct,simultaneous_valid_temperature_slots,simultaneous_valid_temperature_availability_pct
+2026-08-21 19:07:00+00:00,2026-09-07 15:35:00+00:00,24269,404.46666666666664,16.852777777777778,24170,99.59207219086076,23901,98.48366228521982

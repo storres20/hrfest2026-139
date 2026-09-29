@@ -1,0 +1,83 @@
+==========================================================================================
+REVIEWER-READY ANALYSIS SUMMARY
+==========================================================================================
+
+[A] RAW DATASET
+Study-node raw records: 79,674
+
+[B] INITIAL INSTALLATION / CONFIGURATION PHASE
+             records                     first_record                      last_record                first_slot                 last_slot
+username                                                                                                                                  
+ULT26-001          6 2026-08-21 17:43:39.652000+00:00 2026-08-21 19:06:51.127000+00:00 2026-08-21 17:40:00+00:00 2026-08-21 19:06:00+00:00
+MHT2025-001       11 2026-08-21 17:17:15.909000+00:00 2026-08-21 19:06:51.046000+00:00 2026-08-21 17:10:00+00:00 2026-08-21 19:06:00+00:00
+BLD26-001          7 2026-08-21 17:28:03.786000+00:00 2026-08-21 19:06:51.347000+00:00 2026-08-21 17:20:00+00:00 2026-08-21 19:06:00+00:00
+
+[C] COMMON NOMINAL ONE-MINUTE EXPERIMENTAL WINDOW
+Start: 2026-08-21 19:07:00+00:00
+End: 2026-09-07 15:35:00+00:00
+Expected one-minute slots per node: 24,269
+Elapsed duration: 16 days 20:28:00
+Elapsed hours: 404.467
+Elapsed days: 16.8528
+
+[D] INDIVIDUAL NODE RESULTS
+       node                 application  expected_slots  stored_slots  missing_slots  persistence_availability_pct  gap_events  max_missing_slot_run_min  median_inter_record_min  mean_inter_record_min  std_inter_record_min  max_inter_record_min  null_temperature  valid_temperature  temperature_availability_pct
+  ULT26-001              Plasma freezer           24269         24269              0                      100.0000           0                         0                   1.0020                 1.0000                0.0178                1.9008                 2              24267                       99.9918
+MHT2025-001  Blood-storage refrigerator           24269         24196             73                       99.6992           4                        19                   0.9903                 1.0030                0.2421               20.0448                52              24144                       99.4849
+  BLD26-001 Reagent/sample refrigerator           24269         24170             99                       99.5921           4                        31                   0.9904                 1.0041                0.3293               32.3854               215              23955                       98.7062
+
+[E] GAP EVENTS
+       node                 gap_start                   gap_end  missing_slots
+MHT2025-001 2026-08-25 07:05:00+00:00 2026-08-25 07:22:00+00:00             18
+MHT2025-001 2026-08-26 11:42:00+00:00 2026-08-26 12:00:00+00:00             19
+MHT2025-001 2026-09-02 14:20:00+00:00 2026-09-02 14:37:00+00:00             18
+MHT2025-001 2026-09-03 04:57:00+00:00 2026-09-03 05:14:00+00:00             18
+  BLD26-001 2026-08-25 07:05:00+00:00 2026-08-25 07:29:00+00:00             25
+  BLD26-001 2026-08-26 11:42:00+00:00 2026-08-26 12:06:00+00:00             25
+  BLD26-001 2026-09-02 14:20:00+00:00 2026-09-02 14:50:00+00:00             31
+  BLD26-001 2026-09-03 04:57:00+00:00 2026-09-03 05:14:00+00:00             18
+
+[F] SIMULTANEOUS THREE-NODE PERSISTENCE
+24,170/24,269 = 99.5921%
+
+[G] SIMULTANEOUS THREE-NODE VALID TEMPERATURE
+23,901/24,269 = 98.4837%
+
+[H] DUPLICATE SLOT CHECK
+Duplicated node/slot groups: 0
+
+[I] CSV PARSER VALIDATION
+Rows with additional EMPTY trailing fields: 66
+Rows with fewer fields: 3,100
+
+[J] REVIEWER 2 - SCOPE INFORMATION
+Common three-node observation duration: 16.8528 days
+Number of physical monitoring nodes: 3
+NOTE: The extended temporal observation improves the duration of the experimental evaluation, but the deployment still contains only three physical nodes and therefore should not be interpreted as evidence of large-scale scalability.
+
+[K] REVIEWER 2 - FAULT ATTRIBUTION
+NOTE: Missing persistent records represent end-to-end data-continuity interruptions. The persistent database dataset alone cannot attribute a gap to the sensing node, Wi-Fi, WebSocket connection, backend processing, or database writing.
+
+[L] GENERATED FILES
+/content/results/csv_structure_summary.csv
+/content/results/daily_availability.csv
+/content/results/daily_simultaneous_availability.csv
+/content/results/derived_experimental_dataset.csv
+/content/results/duplicate_slot_groups.csv
+/content/results/duplicate_slot_rows.csv
+/content/results/experimental_window_summary.csv
+/content/results/figures/fig1_full_continuity.png
+/content/results/figures/fig2_missing_slots.png
+/content/results/figures/fig3_persistence_availability.png
+/content/results/figures/fig4_temperature_availability.png
+/content/results/figures/fig5_daily_availability.png
+/content/results/figures/fig6_daily_simultaneous_availability.png
+/content/results/gap_events.csv
+/content/results/initial_configuration_phase.csv
+/content/results/initial_configuration_summary.csv
+/content/results/initial_phase_intervals.csv
+/content/results/node_summary.csv
+/content/results/normalized_raw_dataset_with_extra_fields.csv
+/content/results/one_minute_availability_matrix.csv
+/content/results/raw_temporal_ranges.csv
+==========================================================================================
